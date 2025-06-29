@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+       TechStore - Galería de Productos
+    </title>
+     <link rel="stylesheet" href="../_css/style.css">
+</head>
+<body>
+    <div class="device-indicator" data-device="Mobile"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">TechStore</div>
+                <div class="breadcrumb">Inicio > Productos > Electrónicos</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Instrucciones del ejercicio -->
+        <section class="exercise-instructions">
+            <h2 class="instructions-title">🎯 Tu Misión: Optimizar Galería E-commerce</h2>
+            <p style="font-size: var(--font-base); margin-bottom: var(--space-md);">
+                Completa la implementación de imágenes responsive para esta galería de productos. Los usuarios deben tener una experiencia perfecta desde móvil hasta desktop 4K.
+            </p>
+            
+            <div class="requirements-grid">
+                <div class="requirement-card">
+                    <div class="requirement-title">📸 Imágenes Responsive</div>
+                    <p style="font-size: var(--font-sm);">Implementa srcset y sizes para cargar la resolución óptima según el dispositivo.</p>
+                </div>
+                
+                <div class="requirement-card">
+                    <div class="requirement-title">🎨 Art Direction</div>
+                    <p style="font-size: var(--font-sm);">Usa picture element para mostrar diferentes composiciones en móvil vs desktop.</p>
+                </div>
+                
+                <div class="requirement-card">
+                    <div class="requirement-title">⚡ Performance</div>
+                    <p style="font-size: var(--font-sm);">Implementa lazy loading y optimizaciones para carga rápida.</p>
+                </div>
+                
+                <div class="requirement-card">
+                    <div class="requirement-title">♿ Accesibilidad</div>
+                    <p style="font-size: var(--font-sm);">Texto alternativo descriptivo y aspect-ratio para evitar layout shift.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de productos -->
+        <section class="products-section">
+            <h2 class="section-title">Productos Destacados</h2>
+            <div class="products-grid">
+         <!-- Producto 1: Smartphone (Art Direction con <picture>) -->
+    <article class="product-card">
+        <div class="product-image-container" style="aspect-ratio: 4/3; overflow: hidden;">
+            <picture>
+                <!-- Móvil: Cuadrada -->
+                <source media="(max-width: 767px)" srcset="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <!-- Desktop: Rectangular -->
+                <img 
+                    class="product-image"
+                    src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    srcset="
+                        https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 600w,
+                        https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1200w"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    alt="Smartphone Pro Max encendido mostrando apps"
+                    loading="lazy"
+                >
+            </picture>
+            <span class="product-badge">Nuevo</span>
+        </div>
+        <div class="product-content">
+            <h3 class="product-title">Smartphone Pro Max 128GB</h3>
+            <p class="product-description">
+                Último modelo con cámara de 108MP, pantalla AMOLED de 6.7" y batería de larga duración. Perfecto para fotografía profesional.
+            </p>
+            <div class="product-price">
+                <span class="original">$1,299</span>
+                $999
+            </div>
+            <div class="product-actions">
+                <button class="btn btn-primary">Agregar al Carrito</button>
+                <button class="btn btn-secondary">Ver Detalles de celular</button>
+            </div>
+        </div>
+    </article>
+
+    <!-- Producto 2: Laptop (srcset + sizes) -->
+    <article class="product-card">
+        <div class="product-image-container" style="aspect-ratio: 4/3; overflow: hidden;">
+            <img 
+                class="product-image"
+                src="https://plus.unsplash.com/premium_photo-1681302477386-308736d98396?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                srcset="
+                    https://plus.unsplash.com/premium_photo-1681302477386-308736d98396?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 400w,
+                    https://plus.unsplash.com/premium_photo-1681302477386-308736d98396?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 800w,
+                    https://plus.unsplash.com/premium_photo-1681302477386-308736d98396?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1200w"
+                sizes="(max-width: 768px) 100vw, 33vw"
+                alt="Laptop gamer con teclado retroiluminado en mesa"
+                loading="lazy"
+            >
+            <span class="product-badge" style="background: var(--secondary);">Oferta</span>
+        </div>
+        <div class="product-content">
+            <h3 class="product-title">Laptop Gaming RTX 4070</h3>
+            <p class="product-description">
+                Laptop para gaming con procesador Intel i7, 32GB RAM, SSD 1TB y tarjeta gráfica RTX 4070. Rendimiento extremo garantizado.
+            </p>
+            <div class="product-price">
+                <span class="original">$2,199</span>
+                $1,799
+            </div>
+            <div class="product-actions">
+                <button class="btn btn-primary">Agregar al Carrito</button>
+                <button class="btn btn-secondary">Comparar ahora</button>
+            </div>
+        </div>
+    </article>
+
+    <!-- Producto 3: Auriculares (WebP + JPEG fallback) -->
+    <article class="product-card">
+        <div class="product-image-container" style="aspect-ratio: 4/3; overflow: hidden;">
+            <picture>
+                <source type="image/webp" srcset="https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?q=80&w=813&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <img 
+                    class="product-image"
+                    src="https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?q=80&w=813&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Auriculares negros sobre fondo oscuro con luces"
+                    loading="lazy"
+                >
+            </picture>
+            <span class="product-badge" style="background: var(--primary);">Premium</span>
+        </div>
+        <div class="product-content">
+            <h3 class="product-title">Auriculares Noise Cancelling Pro</h3>
+            <p class="product-description">
+                Cancelación de ruido activa, sonido Hi-Res, 30 horas de batería y conexión Bluetooth 5.3. La mejor experiencia de audio.
+            </p>
+            <div class="product-price">$349</div>
+            <div class="product-actions">
+                <button class="btn btn-primary">Agregar al Carrito</button>
+                <button class="btn btn-secondary">Escuchar Demo</button>
+            </div>
+        </div>
+    </article>
+
+    <!-- Producto 4: Smartwatch con fondo en CSS -->
+    <article class="product-card">
+        <div class="aspect-ratio: 4/3; overflow: hidden;"></div>
+        <div 
+            class="product-image-container" 
+            style="
+                aspect-ratio: 1/1; 
+                background-image: url('https://images.unsplash.com/photo-1637160151663-a410315e4e75?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+                background-size: cover;
+                background-position: center;
+                overflow: hidden;
+            "
+            role="img"
+            aria-label="Smartwatch moderno con pantalla de salud activa"
+        >
+        </div>
+        <span class="product-badge" style="background: var(--cuaternary);">Salud</span>
+
+        <div class="product-content">
+            <h3 class="product-title">Smartwatch Health Monitor</h3>
+            <p class="product-description">
+                Monitoreo de salud 24/7, GPS integrado, resistente al agua hasta 50m y batería de 7 días. Tu compañero de bienestar.
+            </p>
+            <div class="product-price">$299</div>
+            <div class="product-actions">
+                <button class="btn btn-primary">Agregar al Carrito</button>
+                <button class="btn btn-secondary">Ver Compatibilidad</button>
+            </div>
+        </div>
+    </article>
+
+        <!-- Producto 5: Camara vlog pro 4k -->
+    <article class="product-card">
+        <div class="aspect-ratio: 4/3; overflow: hidden;"></div>
+        <div 
+            class="product-image-container" 
+            style="
+                aspect-ratio: 1/1; 
+                background-image: url('https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?q=80&w=876&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+                background-size: cover;
+                background-position: center;
+                overflow: hidden;
+            "
+            role="img"
+            aria-label="Cámara profesional de vlogs con pantalla giratoria"
+        >
+        </div>
+        <span class="product-badge" style="background: var(--quinto);">4k image</span>
+
+        <div class="product-content">
+            <h3 class="product-title">Camara vlog pro 4k</h3>
+            <p class="product-description">
+               Cámara ideal para creadores de contenido. Graba en 4K UHD con estabilizador óptico, pantalla giratoria y conectividad inalámbrica.
+            </p>
+            <div class="product-price">
+                  <span class="original">$899</span>
+                  $699
+            </div>
+            <div class="product-actions">
+                <button class="btn btn-primary">Agregar al Carrito</button>
+                <button class="btn btn-secondary">Ver specs y resolucion</button>
+            </div>
+        </div>
+    </article>
+
+    <!-- Producto 6: Control Inalámbrico Elite X  -->
+    <article class="product-card">
+        <div class="aspect-ratio: 4/3; overflow: hidden;"></div>
+        <div 
+            class="product-image-container" 
+            style="
+                aspect-ratio: 1/1; 
+                background-image: url('https://images.unsplash.com/photo-1615556626922-68da0c9f4350?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+                background-size: cover;
+                background-position: center;
+                overflow: hidden;
+            "
+            role="img"
+            aria-label="Control inalámbrico negro sobre mesa de madera"
+        >
+        </div>
+        <span class="product-badge" style="background: var(--sixty);">Gamer</span>
+
+        <div class="product-content">
+            <h3 class="product-title"> Control Inalámbrico Elite X</h3>
+            <p class="product-description">
+                Gamepad de alto rendimiento con gatillos adaptativos, vibración avanzada y batería de 40h. Compatible con Xbox, PC y móvil.
+            </p>
+            <div class="product-price">$179</div>
+            <div class="product-actions">
+                <button class="btn btn-primary">Agregar al Carrito</button>
+                <button class="btn btn-secondary">Ver jugabilidad</button>
+            </div>
+        </div>
+    </article>
+    </section>
+</main>
+
+    <script>
+        // Simulación de carga de imágenes
+        const imageContainers = document.querySelectorAll('.product-image-container');
+        
+        imageContainers.forEach((container, index) => {
+            const placeholder = container.querySelector('.image-placeholder');
+            if (placeholder) {
+                // Simular carga después de 2 segundos
+                setTimeout(() => {
+                    placeholder.style.opacity = '0.5';
+                    placeholder.innerHTML = `
+                        <div style="text-align: center;">
+                            ⏳<br>
+                            <small>Cargando imagen optimizada...</small>
+                        </div>
+                    `;
+                }, 1000 + (index * 500));
+            }
+        });
+
+        // Logging para ayuda en desarrollo
+        console.log(`
+🚀 GUÍA PARA COMPLETAR EL EJERCICIO:
+
+1. PRODUCTO 1 (Smartphone):
+   - Usa <picture> element
+   - Móvil: imagen cuadrada (mejor para scroll vertical)
+   - Desktop: imagen rectangular (aprovecha espacio horizontal)
+
+2. PRODUCTO 2 (Laptop):
+   - Usa <img> con srcset y descriptores w
+   - Múltiples resoluciones: 400w, 800w, 1200w
+   - sizes attribute apropiado
+
+3. PRODUCTO 3 (Auriculares):
+   - Implementa formatos modernos (WebP + fallback)
+   - Usa <picture> para diferentes formatos
+
+4. PRODUCTO 4 (Smartwatch):
+   - Background image responsive con CSS
+   - Media queries para diferentes resoluciones
+
+URLs de ejemplo:
+- https://picsum.photos/400/400?random=X (cuadrada)
+- https://picsum.photos/600/400?random=X (rectangular)
+- https://picsum.photos/800/600?random=X (alta resolución)
+
+¡Manos a la obra! 🎨
+        `);
+
+        // Verificar implementación
+        function checkImplementation() {
+            const pictures = document.querySelectorAll('picture');
+            const imagesWithSrcset = document.querySelectorAll('img[srcset]');
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            console.log(`
+📊 ESTADO DE TU IMPLEMENTACIÓN:
+• Picture elements: ${pictures.length}
+• Imágenes con srcset: ${imagesWithSrcset.length}
+• Imágenes con lazy loading: ${lazyImages.length}
+
+${pictures.length > 0 ? '✅' : '❌'} Picture elements implementados
+${imagesWithSrcset.length > 0 ? '✅' : '❌'} Srcset implementado
+${lazyImages.length > 0 ? '✅' : '❌'} Lazy loading implementado
+            `);
+        }
+
+        // Verificar cada 5 segundos
+        setInterval(checkImplementation, 5000);
+        
+        // Verificación inicial
+        setTimeout(checkImplementation, 2000);
+    </script>
+</body>
+</html>
